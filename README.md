@@ -1,9 +1,9 @@
-Thijs' Never Ending Todo
+# Thijs' Never Ending Todo
 
 ### Features
 
 - add todo item
-- overview of your tasks
+- overview of tasks
 
 ### Goal
 
