@@ -4,7 +4,7 @@
 
 https://csb-k9ur2.netlify.com/
 
-:rocket: ### Features
+### :rocket: Features
 
 - add todo item
 - overview of tasks
