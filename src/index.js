@@ -1,7 +1,7 @@
 import "./styles.css";
 
 var todolist = [
-  'add feature "make font bigger when opening in big screen"',
+  'add feature "make font and input bigger when opening on my laptop"',
   'add feature "add todo by hitting ENTER"'
 ];
 
