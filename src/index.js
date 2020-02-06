@@ -1,11 +1,8 @@
 import "./styles.css";
 
-var todolist = [
-  'add feature "make font and input bigger when opening on my laptop"',
-  'add feature "add todo by hitting ENTER"'
-];
+var todolist = [];
 
-var todoitem = "make coffee";
+var todoitem = [];
 
 function addtodo() {
   todolist.unshift(todoitem);
