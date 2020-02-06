@@ -11,4 +11,4 @@ https://csb-k9ur2.netlify.com/
 
 ### Goal
 
-To make it possible to complete a task. In this way this Never Ending Todo list becomes a real Todo list.
+To make it possible to check a task when complete. :heavy_check_mark: In this way this app becomes a functional Todo list.
