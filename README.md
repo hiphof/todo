@@ -16,4 +16,4 @@ https://csb-k9ur2.netlify.com/
 
 ### :v: Goal
 
-To make it possible to check a task when complete. :heavy_check_mark: In this way this app becomes a functional Todo list.
+To make it possible to check :heavy_check_mark: a task when complete. In this way this app becomes a functional Todo list.
