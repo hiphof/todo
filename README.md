@@ -2,7 +2,7 @@
 
 ### Demo
 
-https://ocsrl.csb.app/
+https://csb-k9ur2.netlify.com/
 
 ### Features
 
