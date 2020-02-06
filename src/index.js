@@ -1,8 +1,8 @@
 import "./styles.css";
 
 var todolist = [
-  'program feature "make font bigger when opening in big screen"',
-  'program feature "add by ENTER"'
+  'add feature "make font bigger when opening in big screen"',
+  'add feature "add todo by hitting ENTER"'
 ];
 
 var todoitem = "make coffee";
