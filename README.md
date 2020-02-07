@@ -19,4 +19,4 @@ https://tram.co
 
 ### :v: Goal
 
-A million completed tasks before 2034 (my 50th birthyear) :heavy_check_mark:
+A million completed tasks :heavy_check_mark: before 2034 (my 50th birthyear)
