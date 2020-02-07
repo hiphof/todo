@@ -4,7 +4,8 @@
 
 ### :rocket: Demo
 
-https://tram.co / https://csb-k9ur2.netlify.com/
+**https://tram.co**
+https://codesandbox.io/s/tram-k9ur2 (IDE)
 
 ### :star: Features
 
