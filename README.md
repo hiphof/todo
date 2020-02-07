@@ -17,4 +17,4 @@ https://csb-k9ur2.netlify.com/
 
 ### :v: Goal
 
-A million tasks completed before 2055 :heavy_check_mark:
+A million completed tasks before 2034 (my 50th birthyear) :heavy_check_mark:
