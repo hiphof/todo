@@ -11,9 +11,9 @@ https://csb-k9ur2.netlify.com/
 
 ### :sweat: Todo
 
-- add feature "complete task" for Pro
-- add feature "adjust font based on screensize"
-- add feature "add task by hitting ENTER (desktop only)"
+- add feature ~"complete task"~ for Pro
+- add feature "adjust font based on screensize" :mag:
+- add feature "add task by hitting ENTER (desktop only)" :computer:
 
 ### :v: Goal
 
