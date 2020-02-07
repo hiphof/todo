@@ -1,6 +1,6 @@
 # Tram
 
-## Tram keeps you in track. Organise your life with this simple todo list.
+## Tram keeps you on track. Organise your life with this minimalistic todo app.
 
 ### :rocket: Demo
 
