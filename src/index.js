@@ -10,6 +10,16 @@ function addtodo() {
   var inputvalue = (document.getElementById("input1").value = "");
 }
 
+/*
+const node = document.getElementsByClassName(".inputclass")[0];
+node.addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+      console.log("hoi")  
+      // Do work
+    }
+});
+*/
+
 function completeTodo() {
   document.getElementById("app").innerHTML =
     '<br><strong><a href="https://bunq.me/open-request/t/472e6a4e-4c53-4522-aef2-ea38daa1ebaf">Upgrade to Pro version</a></strong> to complete a task.';

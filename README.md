@@ -1,4 +1,6 @@
-# Todo
+# Tram
+
+## Tram keeps you in track. Organise your life with this simple todo list.
 
 ### :rocket: Demo
 
