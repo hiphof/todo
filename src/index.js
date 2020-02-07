@@ -22,7 +22,7 @@ node.addEventListener("keyup", function(event) {
 
 function completeTodo() {
   document.getElementById("app").innerHTML =
-    '<br><strong><a href="https://bunq.me/open-request/t/472e6a4e-4c53-4522-aef2-ea38daa1ebaf">Upgrade to Pro version</a></strong> to complete a task.';
+    '<br>To mark a task complete, <strong><a href="https://bunq.me/open-request/t/472e6a4e-4c53-4522-aef2-ea38daa1ebaf">upgrade to the Pro version</a></strong>.';
 }
 
 function buttonfunction() {
