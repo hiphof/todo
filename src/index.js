@@ -12,7 +12,7 @@ function addtodo() {
 
 function completeTodo() {
   document.getElementById("app").innerHTML =
-    '<strong><a href="https://bunq.me/open-request/t/f9f8045e-942b-421f-9f6c-0965a8b734d6">Upgrade to Pro version</a></strong> to complete a task.';
+    '<br><strong><a href="https://bunq.me/open-request/t/472e6a4e-4c53-4522-aef2-ea38daa1ebaf">Upgrade to Pro version</a></strong> to complete a task.';
 }
 
 function buttonfunction() {
