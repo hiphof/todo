@@ -12,7 +12,7 @@ function addtodo() {
 
 function completeTodo() {
   document.getElementById("app").innerHTML =
-    "Upgrade to Pro version to complete a todo.";
+    "<strong>Upgrade to Pro version</strong> to complete a task.";
 }
 
 function buttonfunction() {
@@ -26,12 +26,12 @@ function buttonfunction() {
 function generateList() {
   var outputmessage = "";
   for (var i = 0; i < numberoftasks; i++) {
-    outputmessage += "<li>" + todolist[i] + "</li>";
+    outputmessage += '<li><a href="#">' + todolist[i] + "</a></li>";
   }
   return outputmessage;
 }
 
-document.getElementById("button1").innerHTML = `add`;
+document.getElementById("button1").innerHTML = `add task`;
 
 document.getElementById("button1").addEventListener("click", buttonfunction);
 
@@ -52,7 +52,7 @@ function filldiv() {
 filldiv();
 
 document.querySelector("body").addEventListener("click", function(event) {
-  if (event.target.tagName.toLowerCase() === "li") {
+  if (event.target.tagName.toLowerCase() === "a") {
     // do your action on your 'li' or whatever it is you're listening for
     completeTodo();
   }
