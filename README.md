@@ -6,14 +6,14 @@ https://csb-k9ur2.netlify.com/
 
 ### :star: Features
 
-- add todo item
+- add task
 - overview of tasks
 
 ### :sweat: Todo
 
 - add feature "complete task" for Pro
-- add feature "make font and input bigger when opening on my laptop"
-- add feature "add todo by hitting ENTER"
+- add feature "adjust font based on screensize"
+- add feature "add task by hitting ENTER (desktop only)"
 
 ### :v: Goal
 
