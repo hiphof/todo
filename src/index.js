@@ -7,7 +7,7 @@ var todoitem = [];
 function addtodo() {
   todolist.unshift(todoitem);
   numberoftasks = todolist.length;
-  var inputvalue = (document.getElementById("input1").value = "");
+  var inputvalue = (document.querySelector("#input1").value = "");
 }
 
 /*
@@ -21,12 +21,15 @@ node.addEventListener("keyup", function(event) {
 */
 
 function completeTodo() {
-  document.getElementById("app").innerHTML =
+  console.log("clicked ");
+  //console.log(i);
+
+  document.querySelector("#app").innerHTML =
     '<br>To mark a task complete, <strong><a href="https://bunq.me/open-request/t/472e6a4e-4c53-4522-aef2-ea38daa1ebaf">upgrade to the Pro version</a></strong>.';
 }
 
 function buttonfunction() {
-  var inputvalue = document.getElementById("input1").value;
+  var inputvalue = document.querySelector("#input1").value;
   todoitem = inputvalue;
   addtodo();
 
@@ -35,35 +38,49 @@ function buttonfunction() {
 
 function generateList() {
   var outputmessage = "";
-  for (var i = 0; i < numberoftasks; i++) {
-    outputmessage += '<li><a href="#">' + todolist[i] + "</a></li>";
+  for (var j = 0; j < numberoftasks; j++) {
+    outputmessage +=
+      '<li><a title="j' +
+      j +
+      '" class="todo-item" id=j' +
+      j +
+      ' href="#">' +
+      todolist[j] +
+      "</a></li>";
   }
   return outputmessage;
 }
 
-document.getElementById("button1").innerHTML = `add task`;
+document.querySelector("#button1").innerHTML = `add task`;
 
-document.getElementById("button1").addEventListener("click", buttonfunction);
+document.querySelector("#button1").addEventListener("click", buttonfunction);
 
 var numberoftasks = todolist.length;
 
 function filldiv() {
-  document.getElementById("app").innerHTML =
+  document.querySelector("#app").innerHTML =
     `
-<div>
-  <ul>
+<div class="listclass">
+  <ul id="list">
     ` +
     generateList() +
     ` 
   </ul>
-</div>
+</div><strong>` +
+    numberoftasks +
+    ` tasks in total</strong>
 `;
+  updateEnd();
 }
 filldiv();
 
-document.querySelector("body").addEventListener("click", function(event) {
-  if (event.target.tagName.toLowerCase() === "a") {
-    // do your action on your 'li' or whatever it is you're listening for
-    completeTodo();
+function updateEnd() {
+  const todos = document.querySelectorAll(".todo-item");
+  if (todos) {
+    console.log(todos);
+    for (let i = 0; i < todos.length; i++) {
+      todos[i].addEventListener("click", completeTodo);
+      console.log("i=" + i);
+    }
   }
-});
+}
