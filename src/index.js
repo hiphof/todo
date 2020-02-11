@@ -4,6 +4,26 @@ let todolist = [];
 
 let todoitem = [];
 
+var task = {
+  id: 0,
+  name: "Wash my car",
+  status: "default"
+};
+
+task.new = {
+  id: 1,
+  name: "Wash my bike",
+  status: "default"
+};
+
+task.new = {
+  id: 2,
+  name: "Eat banana",
+  status: "default"
+};
+
+console.log(task);
+
 function buttonfunction() {
   let inputvalue = document.querySelector("#input1").value;
   todoitem = inputvalue;
@@ -47,9 +67,6 @@ function completeTodo() {
   //console.log(clickingID);
   let selecteditem = document.querySelector(clickingID);
   selecteditem.style.textDecoration = "line-through";
-  //document.querySelector(clickingID).innerHTML =
-  // 'To mark a task complete, <strong><a href="https://bunq.me/open-request/t/472e6a4e-4c53-4522-aef2-ea38daa1ebaf">upgrade to the Pro version</a></strong>.';
-  //"<li>hier staat nog iets" + todolist[i] + "</li>";
 }
 
 function generateList() {
@@ -91,6 +108,9 @@ function filldiv() {
   updateEnd();
 }
 filldiv();
+
+document.querySelector("#notification").innerHTML =
+  '<br><br>To enable Dark Mode, <strong><a href="https://bunq.me/open-request/t/472e6a4e-4c53-4522-aef2-ea38daa1ebaf">upgrade to the Pro version</a></strong>.';
 
 //todo
 // * change some let into const
