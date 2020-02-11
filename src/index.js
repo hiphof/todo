@@ -45,8 +45,10 @@ function updateEnd() {
 function completeTodo() {
   let clickingID = "#nr" + arguments[0];
   //console.log(clickingID);
-  document.querySelector(clickingID).innerHTML =
-    'To mark a task complete, <strong><a href="https://bunq.me/open-request/t/472e6a4e-4c53-4522-aef2-ea38daa1ebaf">upgrade to the Pro version</a></strong>.';
+  let selecteditem = document.querySelector(clickingID);
+  selecteditem.style.textDecoration = "line-through";
+  //document.querySelector(clickingID).innerHTML =
+  // 'To mark a task complete, <strong><a href="https://bunq.me/open-request/t/472e6a4e-4c53-4522-aef2-ea38daa1ebaf">upgrade to the Pro version</a></strong>.';
   //"<li>hier staat nog iets" + todolist[i] + "</li>";
 }
 
@@ -54,7 +56,7 @@ function generateList() {
   let outputmessage = "";
   for (let j = 0; j < numberoftasks; j++) {
     outputmessage +=
-      '<li id="nr' +
+      '<li class="li-item" id="nr' +
       j +
       '"><a title="j' +
       j +

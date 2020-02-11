@@ -2,3 +2,7 @@ body {
   font-family: sans-serif;
   background-color: rgb(217, 239, 247);
 }
+
+a.todo-item {
+  text-decoration-line: none;
+}
