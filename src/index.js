@@ -3,31 +3,44 @@ import "./styles.css";
 let todolist = [];
 
 let todoitem = [];
+let list = [];
+let newtask = [];
+function Task(name) {
+  //  this.name = name + "(manually created)";
+  this.name = name;
+  this.status = "default";
+}
 
-var task = {
-  id: 0,
-  name: "Wash my car",
-  status: "default"
-};
+let task1 = new Task("Wash my car");
+let task2 = new Task("Repair my bike");
+let task3 = new Task("Eat banana");
+list.unshift(new Task("go to doctor (todo in object instead of array"));
+list.unshift(new Task("brush teeth"));
 
-task.new = {
-  id: 1,
-  name: "Wash my bike",
-  status: "default"
-};
+createListInConsoleLog();
 
-task.new = {
-  id: 2,
-  name: "Eat banana",
-  status: "default"
-};
+function createListInConsoleLog() {
+  list.forEach(item => console.log(item));
+}
 
-console.log(task);
+//createList();
+function createList() {
+  let itemhtml = "";
+  list.forEach(item => (itemhtml += list(item).status));
+  console.log(itemhtml);
+  //itemhtml += "<li>" + list[item].name + "</li>";
+}
+
+document.querySelector("#objectdiv").innerHTML =
+  "<li>" + list[1].name + "</li>";
+
+console.log(task2.status);
 
 function buttonfunction() {
   let inputvalue = document.querySelector("#input1").value;
   todoitem = inputvalue;
-
+  let newtask = { id: 5, name: inputvalue, status: "default" };
+  console.log(newtask);
   addtodo();
 
   filldiv();
@@ -37,6 +50,8 @@ function addtodo() {
   todolist.unshift(todoitem);
   numberoftasks = todolist.length;
   let inputvalue = (document.querySelector("#input1").value = "");
+  //tasks.unshift(newtask);
+  //console.log(tasks);
 }
 
 /*
