@@ -13,8 +13,8 @@ function Task(name) {
 
 let task1 = new Task("Wash my car");
 let task2 = new Task("Repair my bike");
-let task3 = new Task("Eat banana");
-list.unshift(new Task("go to doctor (todo in object instead of array"));
+let task3 = new Task("Eat apple");
+list.unshift(new Task("go to dentist (todo in object instead of array"));
 list.unshift(new Task("brush teeth"));
 
 createListInConsoleLog();
