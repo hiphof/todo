@@ -6,3 +6,13 @@ body {
 a.todo-item {
   text-decoration-line: none;
 }
+
+.li-tem,
+.li-item-done,
+.li-item-default {
+  font-size: 1.3em;
+}
+
+.li-item-done {
+  text-decoration-line: line-through;
+}
