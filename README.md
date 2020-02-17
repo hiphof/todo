@@ -15,7 +15,7 @@ https://codesandbox.io/s/tram-k9ur2 (IDE)
 
 ### :sweat: Todo
 
-- add feature ~"complete task"~ for Pro
+- avoid adding empty tasks
 - add feature "adjust font based on screensize" :mag:
 - add feature "add task by hitting ENTER (desktop only)" :computer:
 

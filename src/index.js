@@ -97,3 +97,6 @@ fillDiv();
 
 document.querySelector("#notification").innerHTML =
   '<br><br>Like the app? <strong><a href="https://bunq.me/open-request/t/472e6a4e-4c53-4522-aef2-ea38daa1ebaf">Donate me.</a></strong>.';
+
+document.querySelector("#footer").innerHTML =
+  'Made with &#9829; in Leipzig by <a href="https://github.com/hiphof">hiphof</a></strong>';
