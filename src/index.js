@@ -96,4 +96,4 @@ function fillDiv() {
 fillDiv();
 
 document.querySelector("#notification").innerHTML =
-  '<br><br>To enable Dark Mode, <strong><a href="https://bunq.me/open-request/t/472e6a4e-4c53-4522-aef2-ea38daa1ebaf">upgrade to the Pro version</a></strong>.';
+  '<br><br>Like the app? <strong><a href="https://bunq.me/open-request/t/472e6a4e-4c53-4522-aef2-ea38daa1ebaf">Donate me.</a></strong>.';
