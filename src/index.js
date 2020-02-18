@@ -13,9 +13,9 @@ function Task(name) {
 function generateList(item) {
   let class_name = "li-item";
 
-  if (item.status == "default") {
+  if (item.status === "default") {
     class_name = "li-item-default";
-  } else if (item.status == "done") {
+  } else if (item.status === "done") {
     class_name = "li-item-done";
   } else {
     class_name = "li-item";
@@ -59,10 +59,10 @@ function updateEnd() {
 
         let task_status = task_list[obj_index].status;
 
-        if (task_status == "default") {
+        if (task_status === "default") {
           task_list[obj_index].status = "done";
         }
-        if (task_status == "done") {
+        if (task_status === "done") {
           task_list[obj_index].status = "default";
         }
 
@@ -89,14 +89,15 @@ function fillDiv() {
     ` 
   </ul>
 </div>
+
 `;
   updateEnd();
 }
 
 fillDiv();
 
-document.querySelector("#notification").innerHTML =
-  '<br><br>Like the app? <strong><a href="https://bunq.me/open-request/t/472e6a4e-4c53-4522-aef2-ea38daa1ebaf">Donate me.</a></strong>.';
+//document.querySelector("#notification").innerHTML =
+//  '<br><br>Like the app? <strong><a href="https://bunq.me/open-request/t/472e6a4e-4c53-4522-aef2-ea38daa1ebaf">Donate me.</a></strong>.';
 
-document.querySelector("#footer").innerHTML =
+document.querySelector("footer").innerHTML =
   'Made with &#9829; in Leipzig by <a href="https://github.com/hiphof">hiphof</a></strong>';
