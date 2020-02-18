@@ -5,7 +5,7 @@ html {
 body {
   min-height: 100%;
   padding: 0;
-  margin: 0;
+  margin: 10;
   position: relative;
   font-family: sans-serif;
   background-color: lightgreen;
@@ -26,15 +26,15 @@ a.todo-item {
 }
 
 #notification {
-  background-color: yellow;
+  /* background-color: yellow; */
 }
 
 #app {
-  background-color: purple;
+  /*  background-color: purple; */
 }
 
 footer {
-  background-color: aqua;
+  /*  background-color: aqua;*/
   position: absolute;
   bottom: 0;
   width: 100%;
