@@ -33,17 +33,31 @@ function generateList(item) {
 
 function buttonFunction() {
   let input_value = document.querySelector("#input1").value;
-  todo_item = input_value;
+  if (input_value === "") {
+    return;
+  } else {
+    todo_item = input_value;
 
-  addTask();
+    addTask();
 
-  fillDiv();
+    fillDiv();
+  }
 }
 
 function addTask() {
   document.querySelector("#input1").value = "";
 
   task_list.unshift(new Task(todo_item));
+}
+
+function openProModal() {
+  document.querySelector("#pro").style.display = "block";
+
+  document.querySelector("#close").addEventListener("click", closeButton);
+
+  function closeButton() {
+    document.querySelector("#pro").style.display = "none";
+  }
 }
 
 function updateEnd() {
@@ -63,7 +77,8 @@ function updateEnd() {
           task_list[obj_index].status = "done";
         }
         if (task_status === "done") {
-          task_list[obj_index].status = "default";
+          openProModal();
+          //task_list[obj_index].status = "default";
         }
 
         fillDiv();
@@ -95,9 +110,6 @@ function fillDiv() {
 }
 
 fillDiv();
-
-//document.querySelector("#notification").innerHTML =
-//  '<br><br>Like the app? <strong><a href="https://bunq.me/open-request/t/472e6a4e-4c53-4522-aef2-ea38daa1ebaf">Donate me.</a></strong>.';
 
 document.querySelector("footer").innerHTML =
   'Made with &#9829; in Leipzig by <a href="https://github.com/hiphof">hiphof</a></strong>';
