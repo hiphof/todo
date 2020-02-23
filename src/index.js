@@ -10,16 +10,22 @@ function Task(name) {
   this.status = "default";
 }
 
-function generateList(item) {
+let createListItemClass = status => {
   let class_name = "li-item";
 
-  if (item.status === "default") {
+  if (status === "default") {
     class_name = "li-item-default";
-  } else if (item.status === "done") {
+  } else if (status === "done") {
     class_name = "li-item-done";
   } else {
     class_name = "li-item";
   }
+
+  return class_name;
+};
+
+let createListItem = item => {
+  let class_name = createListItemClass(item.status);
 
   tasks_html +=
     '<li class="' +
@@ -29,9 +35,9 @@ function generateList(item) {
     '">' +
     item.name +
     "</li>";
-}
+};
 
-function buttonFunction() {
+let buttonFunction = () => {
   let input_value = document.querySelector("#input1").value;
   if (input_value === "") {
     return;
@@ -40,76 +46,79 @@ function buttonFunction() {
 
     addTask();
 
-    fillDiv();
+    createTasksDiv();
   }
-}
+};
 
-function addTask() {
+let addTask = () => {
   document.querySelector("#input1").value = "";
 
   task_list.unshift(new Task(todo_item));
-}
+};
 
-function openProModal() {
+let openProModal = () => {
+  let closeButton = () => {
+    document.querySelector("#pro").style.display = "none";
+  };
+
   document.querySelector("#pro").style.display = "block";
 
   document.querySelector("#close").addEventListener("click", closeButton);
+};
 
-  function closeButton() {
-    document.querySelector("#pro").style.display = "none";
+let changeTaskStatus = task_status => {
+  if (task_status === "default") {
+    task_status = "done";
+  } else if (task_status === "done") {
+    openProModal();
+    //task_list[obj_index].status = "default";
+  } else {
+    console.log("error");
   }
-}
+  return task_status;
+};
 
-function updateEnd() {
-  const todos = document.querySelectorAll(
+let makeListItemsClickable = () => {
+  let todos = document.querySelectorAll(
     ".li-item, .li-item-done, .li-item-default"
   );
 
   if (todos) {
+    // while todos.lenght
     for (let i = 0; i < todos.length; i++) {
-      todos[i].addEventListener("click", function() {
+      function insideFunction() {
         let obj_index = 0;
         obj_index = task_list.findIndex(obj => obj.id == todos[i].id);
 
         let task_status = task_list[obj_index].status;
 
-        if (task_status === "default") {
-          task_list[obj_index].status = "done";
-        }
-        if (task_status === "done") {
-          openProModal();
-          //task_list[obj_index].status = "default";
-        }
+        task_list[obj_index].status = changeTaskStatus(task_status);
+        createTasksDiv();
+      }
 
-        fillDiv();
-      });
+      todos[i].addEventListener("click", insideFunction);
     }
   }
-}
+};
+
+let createTasksDiv = () => {
+  tasks_html = "";
+  task_list.forEach(createListItem);
+
+  document.querySelector("#app").innerHTML =
+    `<div class="listclass"><ul id="list">
+    ` +
+    tasks_html +
+    `</ul></div>`;
+
+  makeListItemsClickable();
+};
 
 document.querySelector("#button1").innerHTML = `add task`;
 
 document.querySelector("#button1").addEventListener("click", buttonFunction);
 
-function fillDiv() {
-  tasks_html = "";
-  task_list.forEach(generateList);
-
-  document.querySelector("#app").innerHTML =
-    `
-<div class="listclass">
-  <ul id="list">
-    ` +
-    tasks_html +
-    ` 
-  </ul>
-</div>
-
-`;
-  updateEnd();
-}
-
-fillDiv();
+createTasksDiv();
 
 document.querySelector("footer").innerHTML =
   'Made with &#9829; in Leipzig by <a href="https://github.com/hiphof">hiphof</a></strong>';
