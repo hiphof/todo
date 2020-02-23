@@ -10,26 +10,10 @@ function Task(name) {
   this.status = "default";
 }
 
-let createListItemClass = status => {
-  let class_name = "li-item";
-
-  if (status === "default") {
-    class_name = "li-item-default";
-  } else if (status === "done") {
-    class_name = "li-item-done";
-  } else {
-    class_name = "li-item";
-  }
-
-  return class_name;
-};
-
 let createListItem = item => {
-  let class_name = createListItemClass(item.status);
-
   tasks_html +=
-    '<li class="' +
-    class_name +
+    '<li class="li-task ' +
+    item.status +
     '" id="' +
     item.id +
     '">' +
@@ -79,9 +63,7 @@ let changeTaskStatus = task_status => {
 };
 
 let makeListItemsClickable = () => {
-  let todos = document.querySelectorAll(
-    ".li-item, .li-item-done, .li-item-default"
-  );
+  let todos = document.querySelectorAll(".li-task");
 
   if (todos) {
     // while todos.lenght

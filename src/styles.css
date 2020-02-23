@@ -15,14 +15,14 @@ a.todo-item {
   text-decoration-line: none;
 }
 
-.li-tem,
-.li-item-done,
-.li-item-default {
+.li-task {
   font-size: 1.3em;
 }
 
-.li-item-done {
+/*List Item status*/
+.done {
   text-decoration-line: line-through;
+  color: #666666;
 }
 
 #notification {
