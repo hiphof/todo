@@ -11,13 +11,8 @@ https://codesandbox.io/s/tram-k9ur2 (IDE)
 ### :star: Features
 
 - add task
+- complete a task
 - overview of tasks
-
-### :sweat: Todo
-
-- ~avoid adding empty tasks~
-- add feature "adjust font based on screensize" :mag:
-- add feature "add task by hitting ENTER (desktop only)" :computer:
 
 ### :v: Goal
 
