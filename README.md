@@ -1,4 +1,4 @@
-# Tram
+# :tram: Tram
 
 ## Tram keeps you on track. Organise your life with this minimalistic todo app.
 
