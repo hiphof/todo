@@ -10,6 +10,35 @@ function Task(name) {
   this.status = "default";
 }
 
+let handleInput = value => {
+  if (value !== "") {
+    todo_item = value;
+
+    addTask();
+
+    createTasks();
+  }
+};
+
+let enterFunction = event => {
+  if (event.key === "Enter") {
+    let input_value = event.target.value;
+    handleInput(input_value);
+  }
+};
+
+let buttonFunction = event => {
+  console.log(event);
+  let input_value = document.querySelector("#input1").value;
+  handleInput(input_value);
+};
+
+let addTask = () => {
+  document.querySelector("#input1").value = "";
+
+  task_list.unshift(new Task(todo_item));
+};
+
 let createListItem = item => {
   tasks_html +=
     '<li class="li-task ' +
@@ -21,23 +50,13 @@ let createListItem = item => {
     "</li>";
 };
 
-let buttonFunction = () => {
-  let input_value = document.querySelector("#input1").value;
-  if (input_value === "") {
-    return;
-  } else {
-    todo_item = input_value;
+let createTasks = () => {
+  tasks_html = "";
+  task_list.forEach(createListItem);
 
-    addTask();
+  document.querySelector("#list").innerHTML = tasks_html;
 
-    createTasksDiv();
-  }
-};
-
-let addTask = () => {
-  document.querySelector("#input1").value = "";
-
-  task_list.unshift(new Task(todo_item));
+  makeListItemsClickable();
 };
 
 let openProModal = () => {
@@ -50,12 +69,12 @@ let openProModal = () => {
   document.querySelector("#close").addEventListener("click", closeButton);
 };
 
-let changeTaskStatus = task_status => {
+let changeTaskStatus = (task_status, obj_index) => {
   if (task_status === "default") {
     task_status = "done";
   } else if (task_status === "done") {
     openProModal();
-    //task_list[obj_index].status = "default";
+    task_list[obj_index].status = "default";
   } else {
     console.log("error");
   }
@@ -66,41 +85,21 @@ let makeListItemsClickable = () => {
   let todos = document.querySelectorAll(".li-task");
 
   if (todos) {
+    function insideFunction(i) {
+      let obj_index = 0;
+      obj_index = task_list.findIndex(obj => obj.id.toString() === todos[i].id);
+      let task_status = task_list[obj_index].status;
+
+      task_list[obj_index].status = changeTaskStatus(task_status, obj_index);
+      createTasks();
+    }
     // while todos.lenght
     for (let i = 0; i < todos.length; i++) {
-      function insideFunction() {
-        let obj_index = 0;
-        obj_index = task_list.findIndex(obj => obj.id == todos[i].id);
-
-        let task_status = task_list[obj_index].status;
-
-        task_list[obj_index].status = changeTaskStatus(task_status);
-        createTasksDiv();
-      }
-
-      todos[i].addEventListener("click", insideFunction);
+      todos[i].addEventListener("click", () => insideFunction(i));
     }
   }
 };
 
-let createTasksDiv = () => {
-  tasks_html = "";
-  task_list.forEach(createListItem);
-
-  document.querySelector("#app").innerHTML =
-    `<div class="listclass"><ul id="list">
-    ` +
-    tasks_html +
-    `</ul></div>`;
-
-  makeListItemsClickable();
-};
-
-document.querySelector("#button1").innerHTML = `add task`;
-
 document.querySelector("#button1").addEventListener("click", buttonFunction);
-
-createTasksDiv();
-
-document.querySelector("footer").innerHTML =
-  'Made with &#9829; in Leipzig by <a href="https://github.com/hiphof">hiphof</a></strong>';
+document.querySelector("#input1").addEventListener("keypress", enterFunction);
+createTasks();
