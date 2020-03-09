@@ -4,11 +4,20 @@ let todo_item = [];
 let task_list = [];
 let tasks_html = "";
 
+const task_list_storage = JSON.parse(localStorage.getItem("task_list"));
+if (task_list_storage !== null) {
+  task_list = task_list_storage;
+}
+
 function Task(name) {
   this.id = Date.now();
   this.name = name;
   this.status = "default";
 }
+
+let setTaskListInStorage = () => {
+  localStorage.setItem("task_list", JSON.stringify(task_list));
+};
 
 let handleInput = value => {
   if (value !== "") {
@@ -37,6 +46,8 @@ let addTask = () => {
   document.querySelector("#input1").value = "";
 
   task_list.unshift(new Task(todo_item));
+
+  setTaskListInStorage();
 };
 
 let createListItem = item => {
@@ -52,6 +63,7 @@ let createListItem = item => {
 
 let createTasks = () => {
   tasks_html = "";
+
   task_list.forEach(createListItem);
 
   document.querySelector("#list").innerHTML = tasks_html;
@@ -69,16 +81,16 @@ let openProModal = () => {
   document.querySelector("#close").addEventListener("click", closeButton);
 };
 
-let changeTaskStatus = (task_status, obj_index) => {
-  if (task_status === "default") {
-    task_status = "done";
-  } else if (task_status === "done") {
+let changeTaskStatus = (task_status2, obj_index2) => {
+  if (task_status2 === "default") {
+    task_status2 = "done";
+  } else if (task_status2 === "done") {
     openProModal();
-    task_list[obj_index].status = "default";
+    task_list[obj_index2].status = "default";
   } else {
     console.log("error");
   }
-  return task_status;
+  return task_status2;
 };
 
 let makeListItemsClickable = () => {
@@ -91,6 +103,7 @@ let makeListItemsClickable = () => {
       let task_status = task_list[obj_index].status;
 
       task_list[obj_index].status = changeTaskStatus(task_status, obj_index);
+      setTaskListInStorage();
       createTasks();
     }
     // while todos.lenght
